@@ -219,9 +219,6 @@ GEM
       rubyzip (>= 1.2.2)
     semantic_range (3.0.0)
     shellany (0.0.1)
-    simple_form (5.1.0)
-      actionpack (>= 5.2)
-      activemodel (>= 5.2)
     spring (2.1.1)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -285,7 +282,6 @@ DEPENDENCIES
   rails (~> 6.1.4, >= 6.1.4.1)
   sass-rails (>= 6)
   selenium-webdriver
-  simple_form (~> 5.1)
   spring
   spring-watcher-listen (~> 2.0, >= 2.0.1)
   sqlite3 (~> 1.4)

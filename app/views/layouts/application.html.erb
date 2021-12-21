@@ -21,8 +21,8 @@
       <% # configure this to change if user is either signed in or signed out %>
       <div class="navbar-end" >
         <div class="buttons pr-2">
-          <a href="" class="button is-light">Sign up</a>
-          <a href="" class="button is-light">Log in</a>
+          <%= link_to 'Sign up', new_member_registration_path, class: 'button is-light' %>
+          <%= link_to 'Log in', new_member_session_path, class: 'button is-light' %>
         </div>
       </div>
     </nav>
