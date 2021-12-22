@@ -1,0 +1,25 @@
+  <div class="box">
+    <article class="media">
+      <div class="media-content">
+        <div class="content">
+          <strong class="is-size-5"><%= post.title %></strong>
+          <br>
+          <small class="is-size-7"> 
+            <%
+              last_updated = post.updated_at.strftime("%B %d, %Y")
+              member = post.member
+              username = member.username
+            %>
+            <% if member_signed_in? %>
+              <%= link_to username, member_path(member), class: "button is-small is-ghost" %> | <%= last_updated %>
+            <% end %>
+          </small>
+          <br>
+          <p class="has-text-justified is-size-6" >
+            <%= post.content %>
+          </p>
+          <br>
+        </div> 
+      </div> 
+    </article>
+  </div>
