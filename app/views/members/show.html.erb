@@ -6,9 +6,23 @@
       </figure>
     </div> 
     <div class="media-content">
-    <strong><%= @member.username %></strong> <br>
-    <small>Joined on <%= @member.created_at.strftime("%d %B %Y") %> </small><br>
-    <small>Has <%= @member.posts.count %> posts</small>
+      <strong><%= @member.username %></strong> <br>
+      <small>Joined on <%= @member.created_at.strftime("%d %B %Y") %> </small><br>
+      <small>Has <%= @member.posts.count %> posts</small>
+    </div>
+    <div class="media-right">
+      <%= link_to edit_member_registration_path(@member) do %>
+        <div class="icon-text has-text-dark">
+          <span class="icon"> <i class="fa fa-user fa-xs"></i></span> 
+          <span><small>Edit Profile</small></span>
+        </div>
+      <% end %>
+      <%= link_to member_registration_path(@member), method: :delete do %>
+        <div class="icon-text has-text-dark">
+          <span class="icon"> <i class="fa fa-trash fa-xs"></i></span> 
+          <span><small>Delete Profile</small></span>
+        </div>
+      <% end %>
     </div>
   </article>
 
