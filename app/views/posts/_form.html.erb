@@ -1,6 +1,12 @@
+<% if @post.errors.any? %>
+  <% @post.errors.full_messages.each do |message| %>
+    <h3><%= message%></h4>
+  <% end %>
+<% end %>
 <%= form_with model: @post do |f| %>
   <%= f.label :title%>
-  <%= f.text_field :title %>
+  <%= f.text_field :title, autocomplete: false %>
   <%= f.label :content%>
   <%= f.text_area :content %>
+  <%= f.submit 'Post' %>
 <% end %>
