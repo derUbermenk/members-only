@@ -14,10 +14,12 @@
  *= require_self
  */
 
- @import "bulma";
+@import "bulma";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
- #feed {
-    padding-left: 10rem;
-    padding-right: 10rem;
-    min-width: 980px;
- }
+#feed {
+   padding-left: 10rem;
+   padding-right: 10rem;
+   min-width: 980px;
+}

@@ -1,12 +1,25 @@
-<% if @post.errors.any? %>
-  <% @post.errors.full_messages.each do |message| %>
-    <h3><%= message%></h4>
+<div id="feed">
+  <% if @post.errors.any? %>
+    <% @post.errors.full_messages.each do |message| %>
+      <h3><%= message%></h4>
+    <% end %>
   <% end %>
-<% end %>
-<%= form_with model: @post do |f| %>
-  <%= f.label :title%>
-  <%= f.text_field :title, autocomplete: false %>
-  <%= f.label :content%>
-  <%= f.text_area :content %>
-  <%= f.submit 'Post' %>
-<% end %>
+  <%= form_with model: @post  do |f| %>
+    <div class="field">
+      <%= f.label :title , class: 'label' %>
+      <div class="control">
+        <%= f.text_field :title, class: 'input', autocomplete: "off", placeholder: 'Title'%>
+      </div>
+    </div>
+    <div class="field">
+      <%= f.label :content, class: 'label' %>
+      <div class="control">
+        <%= f.text_area :content, class: 'textarea is-small', placeholder: 'Your Story', rows: 20 %>
+      </div>
+    </div>
+
+    <div class="control">
+      <%= f.submit 'Post', class: 'button is-dark' %>
+    </div>
+  <% end %>
+</div>

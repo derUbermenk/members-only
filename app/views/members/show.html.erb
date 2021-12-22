@@ -1,6 +1,16 @@
-<div id="feed">
-<%= @member.username %>
-<%= @member.created_at %>
+<div class="pt-5" id="feed">
+  <article class="media">
+    <div class="media-left">
+      <figure class="image is-64x64">
+        <img src="https://bulma.io/images/placeholders/128x128.png" alt="profile-pic" class="is-rounded">
+      </figure>
+    </div> 
+    <div class="media-content">
+    <strong><%= @member.username %></strong> <br>
+    <small>Joined on <%= @member.created_at.strftime("%d %B %Y") %> </small><br>
+    <small>Has <%= @member.posts.count %> posts</small>
+    </div>
+  </article>
 
   <div class="pt-3">
     <%= render partial: 'posts/post', collection: @member.posts %>

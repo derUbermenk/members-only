@@ -11,15 +11,35 @@
               username = member.username
             %>
             <% if member_signed_in? %>
-              <%= link_to username, member_path(member), class: "button is-small is-ghost" %> | <%= last_updated %>
+              <%= link_to username, member_path(member), class: "is-small is-ghost" %> | <%= last_updated %>
             <% end %>
           </small>
           <br>
           <p class="has-text-justified is-size-6" >
             <%= post.content %>
           </p>
-          <br>
         </div> 
       </div> 
     </article>
+    <br>
+    <% if post.member == current_member %>
+      <div class="level-left">
+        <div class="level-item">
+            <%= link_to edit_post_path(post) do %>
+              <span class="icon-text has-text-dark">
+                <span class='icon'><i class='fas fa-pen' aria-hidden='true'></i></span>
+                <span>Edit</span>
+              </span>
+            <% end %>
+        </div>
+        <div class="level-item">
+            <%= link_to post, method: :delete do %>
+              <span class="icon-text has-text-dark">
+              <span class='icon'><i class='fas fa-trash' aria-hidden='true'></i></span>
+              <span>Delete</span>
+              </span>
+            <% end %>
+        </div>
+      </div>
+    <% end %>
   </div>
