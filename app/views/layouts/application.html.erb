@@ -21,8 +21,12 @@
       <% # configure this to change if user is either signed in or signed out %>
       <div class="navbar-end" >
         <div class="buttons pr-2">
-          <%= link_to 'Sign up', new_member_registration_path, class: 'button is-light' %>
-          <%= link_to 'Log in', new_member_session_path, class: 'button is-light' %>
+          <% if member_signed_in? %>
+            <%= link_to 'Log out', destroy_member_session_path, method: :delete,class: 'button is-light' %>
+          <% else %>
+            <%= link_to 'Sign up', new_member_registration_path, class: 'button is-light' %>
+            <%= link_to 'Log in', new_member_session_path, class: 'button is-light' %>
+          <% end %>
         </div>
       </div>
     </nav>
