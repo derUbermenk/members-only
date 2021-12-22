@@ -16,18 +16,35 @@
           <%= link_to root_path, class: 'navbar-item' do %> 
             <h1 class='title is-5 has-text-white'>Members Only</h1>
           <% end %>
+          <a role="button" class="navbar-buger" aria-label='menu' data-target='navbar-menu'>
+          </a>
+          </div>
       </div>
 
-      <% # configure this to change if user is either signed in or signed out %>
-      <div class="navbar-end" >
-        <div class="buttons pr-2">
-          <% if member_signed_in? %>
-            <%= link_to 'New Post', new_post_path, class: 'button is-light' %>
-            <%= link_to 'Log out', destroy_member_session_path, method: :delete,class: 'button is-light' %>
-          <% else %>
-            <%= link_to 'Sign up', new_member_registration_path, class: 'button is-light' %>
-            <%= link_to 'Log in', new_member_session_path, class: 'button is-light' %>
+      <div id="navbar-menu" class="navbar-menu">
+        <div class="navbar-start">
+          <% 
+            member = current_member || new_member_session_path
+          %>
+          <%= link_to member do %>
+            <div class="navbar-item">
+              <i class="far fa-user fa-2x"></i>
+            </div>
           <% end %>
+        </div>
+
+        <div class="navbar-end" >
+          <div class="navbar-item pr-2">
+            <div class="buttons">
+              <% if member_signed_in? %>
+                <%= link_to 'New Post', new_post_path, class: 'button is-light' %>
+                <%= link_to 'Log out', destroy_member_session_path, method: :delete,class: 'button is-light' %>
+              <% else %>
+                <%= link_to 'Sign up', new_member_registration_path, class: 'button is-light' %>
+                <%= link_to 'Log in', new_member_session_path, class: 'button is-light' %>
+              <% end %>
+            </div>
+          </div>
         </div>
       </div>
     </nav>
