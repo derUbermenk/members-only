@@ -1,3 +1,5 @@
+<%= render "devise/shared/error_messages" %>
+
 <div id="feed">
   <% if @post.errors.any? %>
     <% @post.errors.full_messages.each do |message| %>
