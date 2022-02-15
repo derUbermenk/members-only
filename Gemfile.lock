@@ -98,6 +98,8 @@ GEM
       http_parser.rb (~> 0)
     erubi (1.10.0)
     eventmachine (1.2.7)
+    faker (2.19.0)
+      i18n (>= 1.6, < 2)
     ffi (1.15.4)
     font-awesome-sass (5.15.1)
       sassc (>= 1.11)
@@ -272,6 +274,7 @@ DEPENDENCIES
   byebug
   capybara (>= 3.26)
   devise (~> 4.8)
+  faker
   font-awesome-sass
   gravatar_image_tag (~> 1.2)
   guard-livereload (~> 2.5, >= 2.5.2)
