@@ -7,6 +7,9 @@ The specific requirements are listed in the <a href="https://www.theodinproject.
 </p>
 
 <p> The project is hosted in heroku, you can use the following credentials to log in: </p>
+
+
+username: Constant Presence <br>
 email: constant@email.com <br>
 password: constant@email.com <br>
 
